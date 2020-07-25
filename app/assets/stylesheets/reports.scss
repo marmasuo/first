@@ -50,7 +50,6 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
-
 }
 
 .dailyReport {
@@ -63,6 +62,25 @@ header {
   h1 {
     background-color: lightgray;
   }
+}
+
+.new-contents {
+  height: calc(100vh - 130px);
+  width: 100vw;
+  background-image: url("topimage.jpg");
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.report-form {
+  background-color: lightgray;
+  width: 60%;
+  opacity: 0.9;
+  text-align: center;
+  margin-top: 80px;
+  padding: 10px 0;
 }
 
 footer {
