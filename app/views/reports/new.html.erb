@@ -1,0 +1,17 @@
+<div class="new-contents">
+  <div class="report-form">
+    <%= form_with(model: @report, local: true) do |f| %>
+      行先<br>
+      <%= f.select :client, [["某会社", "某会社"], ["某工場", "某工場"], ["某代理店", "某代理店"], ["某小売店", "某小売店"]], include_blank: "選択して下さい" %><br>
+      面会者<br>
+      <%= f.text_field :client_person, placeholder: "面会者" %><br>
+      用件<br>
+      <%= f.select :business, [["製品紹介", "製品紹介"], ["情報提供", "情報提供"], ["クレーム対応", "クレーム対応"], ["納品", "納品"],["その他（備考に記載）", "その他"]], include_blank: "選択して下さい" %><br>
+      結果<br>
+      <%= f.select :result, [["進捗", "進捗"], ["変わらず", "変わらず"], ["後退", "後退"]], include_blank: "選択して下さい" %><br>
+      備考<br>
+      <%= f.text_area :note, placeholder: "何かあれば入力" %><br>
+      <%= f.submit '報告'%>
+    <% end %>
+  </div>
+</div>

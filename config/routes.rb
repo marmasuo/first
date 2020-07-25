@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/top'
-  resources :reports, only: :index
+  devise_for :users
+  root to: 'home#top'
+  resources :reports
 end
