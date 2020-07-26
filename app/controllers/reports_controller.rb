@@ -10,6 +10,7 @@ class ReportsController < ApplicationController
 
   def create
     Report.create(report_params)
+    redirect_to reports_path
   end
   
   def show
@@ -23,11 +24,13 @@ class ReportsController < ApplicationController
   def update
     report = Report.find(params[:id])
     report.update(report_params)
+    redirect_to reports_path
   end
 
   def destroy
     report = Report.find(params[:id])
     report.destroy
+    redirect_to reports_path
   end
 
   private
