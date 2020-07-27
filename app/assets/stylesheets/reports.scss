@@ -62,6 +62,11 @@ header {
   h1 {
     background-color: lightgray;
   }
+  a {
+    color: black;
+    text-decoration: none;
+    margin-left: 5px;
+  }
 }
 
 .new-contents {
@@ -76,11 +81,34 @@ header {
 
 .report-form {
   background-color: lightgray;
-  width: 60%;
+  width: 40%;
   opacity: 0.9;
   text-align: center;
   margin-top: 80px;
   padding: 10px 0;
+}
+
+.comment-form {
+  background-color: lightslategrey;
+  opacity: 0.9;
+  width: 40%;
+  padding: 20px;
+  text-align: center;
+}
+
+.comments {
+  background-color: lightsteelblue;
+  opacity: 0.9;
+  width: 40%;
+  margin-top: 10px;
+  padding: 20px;
+  h3 {
+    font-weight: bold;
+  }
+  p {
+    background-color: white;
+    margin: 10px 0;
+  }
 }
 
 footer {

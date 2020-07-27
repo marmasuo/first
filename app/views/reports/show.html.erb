@@ -14,8 +14,29 @@
     <h1>備考</h1>
       <p><%= @report.note %></p>
     <div align="right">
-      <%= link_to "編集", edit_report_path(@report.id), method: :get %>
-      <%= link_to "削除", report_path(@report.id), method: :delete %>
+      <% if user_signed_in? && current_user.id == @report.user_id %>
+        <%= link_to "編集", edit_report_path(@report.id), method: :get %>
+        <%= link_to "削除", report_path(@report.id), method: :delete %>
+      <% end %>
     </div>
   </div>
-</div>
+  <div class="comment-form">
+    <%= form_with(model: [@report, @comment], local: true) do |form| %>
+      <%= form.text_area :text, placeholder: "コメントを入力", rows: "2" %><br>
+      <%= form.submit "コメントする", class: "submit-btn" %>
+    <% end %>
+  </div>
+  <div class="comments">
+    <h3 align="center">＜コメント一覧＞</h3>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= comment.user.name %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+</div> 
+
+ 
