@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+  before_action :move_to_top
 
   def index
     @reports = Report.includes(:user).order("created_at DESC")
@@ -38,6 +39,12 @@ class ReportsController < ApplicationController
   private
   def report_params
     params.require(:report).permit(:client, :client_person, :business, :result, :note).merge(user_id: current_user.id)
+  end
+
+  def move_to_top
+    unless user_signed_in?
+      redirect_to root_path
+    end
   end
   
 end
