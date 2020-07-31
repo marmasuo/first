@@ -1,6 +1,6 @@
 header {
   height: 80px;
-  width: 100vw;
+  width: 100%;
   background-color: lightblue;
   display: flex;
   justify-content: space-between;
@@ -28,7 +28,13 @@ header {
   color: white;
 }
 
+.report-index {
+  margin-left: 10px;
+  background-color: lightsalmon;
+}
+
 .entry {
+  margin-left: 10px;
   background-color: lightcoral;
 }
 
@@ -86,6 +92,7 @@ header {
   text-align: center;
   margin-top: 80px;
   padding: 10px 0;
+  line-height: 2.0;
 }
 
 .comment-form {

@@ -1,0 +1,47 @@
+// Place all the styles related to the boards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.boards-contents {
+  height: calc(100vh - 130px);
+  width: 100vw;
+  background-image: url("topimage.jpg");
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .boards-form {
+    margin: 40px 0;
+    background-color: lightskyblue;
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+    .form-text {
+      width: 90%;
+    }
+  }
+  &-article {
+    background-color: lightgreen;
+    margin: 20px 0;
+    padding: 10px 20px;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    .message {
+      background-color: whitesmoke;
+    }
+    .fa {
+      color: red;
+      margin-top: 15px;
+    }
+    .far {
+      color: black;
+      margin-left: 10px;
+    }
+    .date {
+      float: right;
+      margin-top: 10px;
+      font-size: 10px;
+    }
+  }
+}

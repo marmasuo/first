@@ -1,0 +1,22 @@
+<div class="boards-contents">
+  <div class="boards-form">
+    <%= form_with(model: @board, local: true) do |f| %>
+      <%= f.text_area :content, placeholder: "連絡事項を入力", class:"form-text"%><br>
+      <%= f.submit '投稿', class:"send" %>
+    <% end %>
+  </div>
+
+  <% @boards.each do |board| %>
+    <div class="boards-contents-article">
+      <h4 class="writer">投稿者：<%= board.user.name %><span><h4>
+      <p class="message"><%= board.content %></p>
+      <i class="fa fa-check" aria-hidden="true"></i>
+      <% if user_signed_in? && current_user.id == board.user_id %>
+        <%= link_to board_path(board.id), method: :delete do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      <% end %>
+      <br><p class="date"><%= board.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+    </div>
+  <% end %>
+</div>

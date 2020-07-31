@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :reports do
     resources :comments, only: :create
   end
+  resources :boards, only: [:index, :new, :create, :destroy]
 end
