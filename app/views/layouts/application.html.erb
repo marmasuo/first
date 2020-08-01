@@ -16,6 +16,7 @@
       </div>
       <% if user_signed_in? %>
         <div class="header-right">
+          お疲れ様です、<%= current_user.name %>さん
           <%= link_to "報告一覧", reports_path, method: :get, class: "btn report-index" %>
           <%= link_to "業務報告", new_report_path, method: :get, class: "btn entry" %>
           <%= link_to "連絡掲示板", boards_path, method: :get, class: "btn bbs" %>

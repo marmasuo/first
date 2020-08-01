@@ -10,8 +10,16 @@
     <div class="boards-contents-article">
       <h4 class="writer">投稿者：<%= board.user.name %><span><h4>
       <p class="message"><%= board.content %></p>
-      <i class="fa fa-check" aria-hidden="true"></i>
-      <% if user_signed_in? && current_user.id == board.user_id %>
+      <% if Check.find_by(user_id: current_user.id, board_id: board.id)  %>
+        <%= link_to board_check_path(board.id, current_user.id), method: :delete do %>
+          <i class="fa fa-check on" aria-hidden="true"></i><a class="count"><%= board.checks.count %></a>
+        <% end %>
+      <% else %>
+        <%= link_to board_checks_path(board.id), method: :post do %>
+          <i class="fa fa-check off" aria-hidden="true"></i><a class="count"><%= board.checks.count %></a>
+        <% end %>
+      <% end %>
+      <% if current_user.id == board.user_id %>
         <%= link_to board_path(board.id), method: :delete do %>
           <i class="far fa-trash-alt"></i>
         <% end %>
