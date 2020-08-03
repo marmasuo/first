@@ -2,7 +2,7 @@
   <div class="report-form">
     <%= form_with(model: @report, local: true) do |f| %>
       行先<br>
-      <%= f.select :client, [["某会社", "某会社"], ["某工場", "某工場"], ["某代理店", "某代理店"], ["某小売店", "某小売店"]], include_blank: "選択して下さい" %><br>
+      <%= f.select :client, [["某会社", "某会社"], ["某工場", "某工場"], ["某代理店", "某代理店"], ["某小売店", "某小売店"], ["その他（備考に記載）", "その他"]], include_blank: "選択して下さい" %><br>
       面会者<br>
       <%= f.text_field :client_person, placeholder: "面会者" %><br>
       用件<br>
