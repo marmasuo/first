@@ -41,6 +41,23 @@ header {
   width: 100vw;
   background-image: url("topimage.jpg");
   position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-form {
+  margin-top: 80px;
+  background-color: lightskyblue;
+  padding: 20px;
+  opacity: 0.9;
+}
+
+.signup-form {
+  margin-top: 80px;
+  background-color: lightskyblue;
+  padding: 20px;
+  opacity: 0.9;
 }
 
 .main-messages {
