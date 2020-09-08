@@ -37,6 +37,7 @@ class ReportsController < ApplicationController
   end
 
   def search
+    @reports = Report.search(params[:keyword])
   end
 
   private

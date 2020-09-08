@@ -1,6 +1,6 @@
 <div class="main-contents">
   <%= form_with(url: search_reports_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "日報検索", class: "search-input" %>
+    <%= form.text_field :keyword, placeholder: "備考欄キーワード", class: "search-input" %>
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
   <% @reports.each do |report| %>
