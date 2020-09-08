@@ -36,6 +36,9 @@ class ReportsController < ApplicationController
     redirect_to reports_path
   end
 
+  def search
+  end
+
   private
   def report_params
     params.require(:report).permit(:client, :client_person, :business, :result, :note).merge(user_id: current_user.id)
