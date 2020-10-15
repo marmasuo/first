@@ -22,6 +22,9 @@ class ReportsController < ApplicationController
 
   def edit
     @report = Report.find(params[:id])
+    if @report.user_id != current_user.id
+      redirect_to reports_path
+    end
   end
 
   def update
@@ -32,8 +35,10 @@ class ReportsController < ApplicationController
 
   def destroy
     report = Report.find(params[:id])
-    report.destroy
-    redirect_to reports_path
+    if report.user_id == current_user.id
+      report.destroy
+      redirect_to reports_path
+    end
   end
 
   def search
