@@ -16,8 +16,10 @@ class BoardsController < ApplicationController
   
   def destroy
     board = Board.find(params[:id])
-    board.destroy
-    redirect_to boards_path
+    if board.user_id == current_user.id
+      board.destroy
+      redirect_to boards_path
+    end
   end
 
   private
